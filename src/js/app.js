@@ -268,6 +268,25 @@ $( "#reset_all_data" ).click(function( event ) {
     event.preventDefault();
 });
 
+//stock comparison
+$( "#stock_comparison" ).click(function( event ) {
+    event.stopPropagation();
+    event.preventDefault();
+
+    var t1 = $("#ticker1").val();
+    var t2 = $("#ticker2").val();
+
+    $.post( "http://localhost:5000/stats", { ticker1: t1, ticker2: t2 })
+        .done(function( data ) {
+            console.log(data);
+
+            $("#beta").text(data.beta);
+            $("#corr").text(data.corr);
+        });
+
+    // event.preventDefault();
+});
+
 $("#build_portfolio").change(function(){
     $("#stock_weight").append("<label>" +  $(this).val() + "</label>\n" +
         "                    <input type=\"number\" id="+ $(this).val() +" />")
@@ -304,20 +323,6 @@ $("#liguifan").click(function () {
     }
 
 
-    //stock comparison
-    $( "form" ).submit(function( event ) {
-        var t1 = $("#ticker1").val()
-        var t2 = $("#ticker2").val()
 
-        $.post( "http://localhost:5000/stats", { ticker1: t1, ticker2: t2 })
-            .done(function( data ) {
-                console.log(data);
-
-                $("#beta").text(data.beta);
-                $("#corr").text(data.corr);
-            });
-
-        event.preventDefault();
-    });
 
 });
