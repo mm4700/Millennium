@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- load the d3.js library -->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!--css style sheet-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+
+</head>
+
+
+<div>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+        <li class=""><a data-toggle="tab" href="#company">Company Overview</a></li>
+        <li class=""><a data-toggle="tab" href="#portfolio">Build Portfolio</a></li>
+        <li class=""><a data-toggle="tab" href="#csv">Upload CSV</a></li>
+        <li class=""><a data-toggle="tab" href="#compare">Stock Comparison</a></li>
+        <li class=""><a data-toggle="tab" href="#livedata">Live Data</a></li>
+    </ul>
+
+    <div class="tab-content">
+
+        <div id="home" class="tab-pane fade in active">
+            <h3>HOME</h3>
+            <p>Some content.</p>
+        </div>
+
+        <div id="company" class="tab-pane fade">
+            <h3>Company Overview</h3>
+            <form action="" class="form-inline">
+                <div class="form-group">
+                    <label>Select stock</label>
+                    <select class="form-control" id="company_overview" ></select>
+                </div>
+            </form>
+            <div id="company_overview_chart"></div>
+            <script></script>
+            <form class="col-sm-8 text-left">
+                <label class="ticker_name">Name: </label>
+                <div id = "ticker_name"></div>
+                <label class="description">Description: </label>
+                <div id = "description"></div>
+                <label class="GICS_Sector">GICS Sector: </label>
+                <div id = "GICS_Sector"></div>
+                <label class="GICS_industry">GICS Industry: </label>
+                <div id = "GICS_industry"></div>
+                <label class="GICS_industry_group">GICS Industry Group: </label>
+                <div id = "GICS_industry_group"></div>
+                <label class="GICS_industry_subgroup">GICS Industry SubGroup: </label>
+                <div id = "GICS_industry_subgroup"></div>
+            </form>
+
+        </div>
+
+        <div id="portfolio" class="tab-pane fade">
+            <h3>Build Portfolio</h3>
+            <script></script>
+            <form action="" class="form-inline">
+                <div class="form-group">
+                    <label for="build_portfolio">Select stock</label>
+                    <select class="form-control" id="build_portfolio" ></select>
+                </div>
+
+                <form class = "form-control ">
+                    <div id="stock_weight"></div>
+                </form>
+            </form>
+            <button id="liguifan" >Submit portfolio</button>
+        </div>
+
+        <div id="csv" class="tab-pane fade">
+            <div id="dvImportSegments" class="fileupload ">
+                <script></script>
+                <fieldset>
+                    <legend>Upload your CSV File</legend>
+                    <!--<input type="file" name="File Upload" id="txtFileUpload" accept=".csv" />-->
+                    <button id="upload_all_data">Upload</button><br>
+                    <button id="reset_all_data">Reset All data</button><br>
+                </fieldset>
+            </div>
+        </div>
+
+        <div id="compare" class="tab-pane fade">
+            <h3>Stock Comparison Analysis</h3>
+            <script></script>
+            <form action="" class="form-inline">
+                <form action="" class="form-inline" method="post">
+                    <label for = "ticker1">Ticker1 :</label>
+                    <select class="form-control" id = "ticker1" ></select>
+                    <label for = "ticker2">Ticker2 :</label>
+                    <select class="form-control" id = "ticker2" ></select>
+                    <input type="submit" value="Submit">
+                </form>
+
+                <form class="form-inline">
+                    <label for = "beta">Beta :</label>
+                    <div id="beta"></div>
+                    <label for = "corr">Correlation :</label>
+                    <div id="corr"></div>
+                </form>
+            </form>
+        </div>
+
+        <div id="livedata" class="tab-pane fade">
+            <script></script>
+            <form>
+                <div>
+                    <label for="uname">Choose a Stock: </label>
+                    <input type="text" id="uname" name="name">
+                </div>
+                <div>
+                    <button id="stock_input">Submit</button>
+                </div>
+            </form>
+            <div id="live_data"></div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<script src = "js/app.js"></script>
+
+
+</div>
+
+
